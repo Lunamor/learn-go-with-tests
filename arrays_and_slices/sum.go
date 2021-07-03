@@ -12,7 +12,7 @@ func SumAll(numsToSum ...[]int) []int {
     var sums []int
 
     for _, nums := range numsToSum {
-        sums = append(sums, Sum(numbers))
+        sums = append(sums, Sum(nums))
     }
     return sums
 }
