@@ -10,6 +10,19 @@ import (
 const write = "write"
 const sleep = "sleep"
 
+type ConfigurableSleeper struct {
+    duration time.Duration
+    sleep    func(time.Duration)
+}
+
+type SpyTime struct {
+    durationSlept time.Duration
+}
+
+func (s *SpyTime) Sleep(duration time.Duration) {
+    s.DurationSlept = duration
+}
+
 type Sleeper interface {
     Sleep()
 }
